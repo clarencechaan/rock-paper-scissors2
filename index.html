@@ -26,7 +26,7 @@
         function playRound(playerSelection, computerSelection) {
 
             // capitalize first letter and lowercase rest if player selection is valid
-            if (playerSelection != '') {
+            if (playerSelection != '' && playerSelection) {
                 playerSelection = playerSelection[0].toUpperCase() + (playerSelection.slice(1)).toLowerCase();
             }
 
