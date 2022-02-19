@@ -102,21 +102,18 @@ function updateGame(selection) {
         playerScoreDiv.textContent = 'Player: ' + playerWins;
     } else if (whoWonRound(roundMessage.textContent) === 'Computer') {
         computerWins++;
-        computerScoreDiv.textContent = 'Computer : ' + computerWins;
+        computerScoreDiv.textContent = 'Computer: ' + computerWins;
     } else if (whoWonRound(roundMessage.textContent) === 'Tie') {
         ties++;
     }
 
-    if (playerWins >= 5 || computerWins >= 5) {
-        if (playerWins >= 5) {
-            gameMessage.textContent = 'Player wins the game. ';
-        } else if (computerWins >= 5) {
-            gameMessage.textContent = 'Computer wins the game. ';
-        }
-        gameMessage.textContent += 'Player won ' + playerWins + ' time(s). ' 
-                + 'Computer won ' + computerWins + ' time(s). ' 
-                +  'The were ' + ties + ' tie round(s).';
+    if (playerWins >= 5) {
+        gameMessage.textContent = 'Player wins the game. ';
         buttons.forEach((button) => button.disabled = true);
+    } else if (computerWins >= 5) {
+        gameMessage.textContent = 'Computer wins the game. ';
+        buttons.forEach((button) => button.disabled = true);
+
     }
 
 }
